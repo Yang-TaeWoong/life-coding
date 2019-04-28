@@ -6,23 +6,44 @@
         WEB1 - JavaScripts
     </title>
     <meta charset="utf-8">
+    <script>
+        function setColour(colour){
+            var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = 'powderblue';
+                    i++;
+                }
+        }
+        function setColor(color){
+            document.querySelector('body').style.color=color;
+        }
+        function setBackgroundColor(color)
+        {
+            document.querySelector('body').style.background=color;
+        }
+        function nightDayHandler(self) {
+            var target = document.querySelector('body');
+            if (self.value === 'night') {
+
+                setColor('white');
+                setBackgroundColor('black');
+                self.value = 'day';
+                setColour('powderblue');
+            } else {
+                setColor('black');
+                setBackgroundColor('white');
+                self.value = 'night';
+                setColour('blue');
+            }
+        }
+    </script>
 </head>
 
 <body>
     <h1><a href="index.html">WEB</a></h1>
     <input type="button" id="night_day" value='night' onclick="
-        var target=document.querySelector('body');
-        if(this.value === 'night'){
-         
-        target.style.backgroundColor='black';
-        target.style.color='white';
-        this.value='day'
-    } 
-    else{
-        target.style.backgroundColor='white';
-        target.style.color='black';   
-        this.value = 'night'
-    }">
+        nightDayHandler(this);">
     <ol>
         <li> <a href="1.html">HTML</a> </li>
         <li> <a href="2.html">CSS</a> </li>
@@ -34,6 +55,4 @@
     </p>
     <p style="margin-top:45px;">HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets.
     </p>
-</body>
-
-</html>
+</body></html>
