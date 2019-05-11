@@ -6,37 +6,8 @@
         WEB1 - JavaScripts
     </title>
     <meta charset="utf-8">
-    <script>
-        function setColour(colour){
-            var alist = document.querySelectorAll('a');
-                var i = 0;
-                while (i < alist.length) {
-                    alist[i].style.color = 'powderblue';
-                    i++;
-                }
-        }
-        function setColor(color){
-            document.querySelector('body').style.color=color;
-        }
-        function setBackgroundColor(color)
-        {
-            document.querySelector('body').style.background=color;
-        }
-        function nightDayHandler(self) {
-            var target = document.querySelector('body');
-            if (self.value === 'night') {
-
-                setColor('white');
-                setBackgroundColor('black');
-                self.value = 'day';
-                setColour('powderblue');
-            } else {
-                setColor('black');
-                setBackgroundColor('white');
-                self.value = 'night';
-                setColour('blue');
-            }
-        }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="color.js">
     </script>
 </head>
 
